@@ -1,15 +1,34 @@
 <template>
-  <header>
-    <!--inserire contenuto componente-->
-    ciao
-  </header>
+  <div>
+    <!-- <input v-model="RicercaInput" placeholder="Cerca un film"> -->
+    <input
+      type="text"
+      v-bind:value="film"
+      v-on:input="$emit(
+        'update:film',
+        $event.target.value
+      )"
+      placeholder="Cerca un film..."
+    />
+  </div>
 </template>
 
 <script>
 export default {
-  //Cambiare il nome con quello del componente creato
   name: 'HeaderComp',
-}
+
+  model: {
+    prop: 'film',
+    event: 'update:city'
+  },
+
+  props: {
+    film: {
+      type: String,
+      default: ''
+    }
+  }
+};
 </script>
 
 <style scoped lang="scss">
