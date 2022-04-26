@@ -14,6 +14,11 @@
 export default {
   name: 'HeaderComp',
 
+  data(){
+    return{
+    testoCercato: '',
+    }  
+  },
 };
 </script>
 

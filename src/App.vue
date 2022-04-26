@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App" />
 
     <HeaderComp @ricerca="funRicercaFilm" />
 
@@ -26,7 +25,6 @@
     data() {
       return {
         ArrayFilm: [],
-        testoCercato: '',
         apiKey: 'd542398f5a6299c783607744da728d32',
       }
     },
@@ -35,6 +33,7 @@
       funRicercaFilm(testoCercato) {
         axios.get('https://api.themoviedb.org/3/search/movie?api_key=${this.apiKey}&query=${tetoCercatos}')
           .then((res) => {
+            console.log(testoCercato);
             console.log(res.data.results);
             this.ArrayFilm = res.data.results
           })
