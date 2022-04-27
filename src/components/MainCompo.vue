@@ -1,14 +1,23 @@
 <template>
   <header>
     <!--inserire contenuto componente-->
-    ciao
+    <FilmList :propsArrayFilmFiglio="propsArrayFilm" :propsArraySerieFiglio="propsArraySerie"/>
   </header>
 </template>
 
 <script>
+
+import FilmList from './partials/FilmList.vue'
+
 export default {
-  //Cambiare il nome con quello del componente creato
   name: 'MainComp',
+  components: {
+    FilmList
+  },
+  props: {
+    propsArrayFilm: Array,
+    propsArraySerie: Array
+  }
 }
 </script>
 
